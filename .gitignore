@@ -1,0 +1,162 @@
+# ═══════════════════════════════════════════════════════════
+# S.O.V.A — PROPRIETARY SOURCE EXCLUSION LIST
+# Only README, LICENSE, package.json, and .template stubs are public.
+# Everything else is excluded.
+# ═══════════════════════════════════════════════════════════
+
+# ──── Build artifacts & dependencies ────
+node_modules/
+dist/
+*.tsbuildinfo
+
+# ──── Environment & credentials ────
+.env
+.env.local
+.env.production
+.env.example
+.npmrc
+*.pem
+*.key
+
+# ──── MCP & tool configs ────
+.mcp.json
+mcp.json
+.claude/
+
+# ──── Database & session data ────
+sova.db
+sova.db-shm
+sova.db-wal
+data/
+reports/
+
+# ──── Playwright / Chromium binaries ────
+pw-browsers/
+SOVA-Electron/pw-browsers/
+
+# ──── Electron attack data & payloads (CORE IP) ────
+SOVA-Electron/assets/attacks.json
+SOVA-Electron/assets/mock/
+SOVA-Electron/Multi Turn Prompt Injection*
+
+# ──── Build logs ────
+SOVA-Electron/build_log.txt
+SOVA-Electron/build_out.log
+SOVA-Electron/package-lock.json
+
+# ──── Confidential docs & strategy ────
+ARCHITECTURE.md
+GRANT_APPLICATION_PROGRESS.html
+grant-assets/
+MarkdownFile*.md
+1111truscor.md
+TRUSCORE Implementation Blueprint.md
+TRUSCORE provides.md
+implementation_plan*
+test1.0
+
+# ═══════════════════════════════════════════════════════════
+# PROPRIETARY SOURCE CODE — S.O.V.A CLI ENGINE
+# Template versions (.template.ts) are tracked instead
+# ═══════════════════════════════════════════════════════════
+
+# CLI entry & controller
+src/index.ts
+src/controller.ts
+
+# AI agents (6 specialized agents)
+src/agents/base.ts
+src/agents/attacker.ts
+src/agents/explorer.ts
+src/agents/strategist.ts
+src/agents/mutator.ts
+src/agents/recon.ts
+src/agents/judge.ts
+src/agents/refiner.ts
+
+# 5-phase attack pipeline
+src/phases/phase1-recon.ts
+src/phases/phase2-mapping.ts
+src/phases/phase3-planning.ts
+src/phases/phase4-execution.ts
+src/phases/phase5-report.ts
+
+# LLM integration & model routing
+src/llm/client.ts
+src/llm/roles.ts
+
+# Atlas MCP browser control
+src/mcp/client.ts
+src/mcp/spawn.ts
+
+# Visual-layer attack engine
+src/explore/visual-deliver.ts
+src/explore/visual-loop.ts
+src/explore/target-adapter.ts
+
+# Attack library & templates (CORE IP)
+src/attacks/library.ts
+src/attacks/templates/
+
+# Memory / database layer
+src/memory/db.ts
+src/memory/repos.ts
+
+# Login / auth handler
+src/login/handler.ts
+
+# Observation / snapshot
+src/observe/snapshot.ts
+
+# Type definitions (internal architecture)
+src/types/attack.ts
+src/types/session.ts
+src/types/surface.ts
+src/types/tracing.ts
+
+# Utilities
+src/util/ids.ts
+src/util/log.ts
+src/util/retry.ts
+
+# ═══════════════════════════════════════════════════════════
+# PROPRIETARY SOURCE CODE — SOVA ELECTRON ENGINE
+# Template versions (.template.js) are tracked instead
+# ═══════════════════════════════════════════════════════════
+
+# Electron main process
+SOVA-Electron/main.js
+
+# Orchestration engine
+SOVA-Electron/engine/orchestrator.js
+SOVA-Electron/engine/nova-attacker.js
+SOVA-Electron/engine/browser-attacker.js
+SOVA-Electron/engine/scoring.js
+SOVA-Electron/engine/payloads.js
+SOVA-Electron/engine/theater-mode.js
+SOVA-Electron/engine/test-orchestrator.js
+
+# MVP demo workers (α/β/γ swarm)
+SOVA-Electron/engine/mvp/mvp-runner.js
+SOVA-Electron/engine/mvp/worker-alpha.js
+SOVA-Electron/engine/mvp/worker-beta.js
+SOVA-Electron/engine/mvp/worker-gamma.js
+SOVA-Electron/engine/mvp/payloads-scripted.js
+SOVA-Electron/engine/mvp/google-signin.js
+SOVA-Electron/engine/mvp/chromium-popup.js
+SOVA-Electron/engine/mvp/fallback-theater.js
+
+# Live mode bridge
+SOVA-Electron/engine/live/sova-bridge.js
+SOVA-Electron/engine/live/log-parser.js
+SOVA-Electron/engine/live/jsonl-tailer.js
+SOVA-Electron/engine/live/score-mapping.js
+
+# Build / deployment scripts
+SOVA-Electron/scripts/launch.js
+SOVA-Electron/scripts/preflight.js
+SOVA-Electron/scripts/warmup.js
+SOVA-Electron/scripts/download-chromium.js
+
+# Electron build output
+SOVA-Electron/node_modules/

@@ -1,0 +1,73 @@
+{
+  "name": "sova-electron",
+  "version": "1.0.0",
+  "description": "S.O.V.A — Security & Offensive Vulnerability Adversary",
+  "main": "main.js",
+  "scripts": {
+    "start": "node scripts/launch.js",
+    "dev": "node scripts/launch.js",
+    "prebuild": "node scripts/download-chromium.js",
+    "preflight": "node scripts/preflight.js",
+    "warmup": "node scripts/warmup.js",
+    "build": "electron-builder --win nsis",
+    "pack": "electron-builder --dir",
+    "package": "npm run prebuild && electron-builder --win nsis"
+  },
+  "author": "SOVA",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^28.2.3",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "jspdf": "^2.5.1",
+    "openai": "^4.28.0",
+    "playwright-core": "^1.42.0"
+  },
+  "build": {
+    "appId": "com.sova.platform",
+    "productName": "SOVA",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "artifactName": "SOVA-Setup-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "SOVA",
+      "runAfterFinish": true
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*",
+      "engine/**/*",
+      "assets/**/*",
+      "node_modules/**/*",
+      "!node_modules/playwright/**",
+      "!node_modules/**/test/**",
+      "!node_modules/**/*.map"
+    ],
+    "extraResources": [
+      {
+        "from": "assets/",
+        "to": "assets"
+      },
+      {
+        "from": "pw-browsers/",
+        "to": "pw-browsers",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "asar": true,
+    "compression": "normal"
+  }
+}

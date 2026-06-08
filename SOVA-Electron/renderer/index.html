@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOVA Actuarial Platform</title>
+  <!-- Content Security Policy: allows inline styles and scripts for Electron MVP -->
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
+  <link rel="stylesheet" href="css/sova.css">
+</head>
+<body>
+
+  <!-- Custom Titlebar -->
+  <div id="titlebar">
+    <div class="traffic-lights">
+      <button class="close" onclick="window.truscore.windowControl('close')"></button>
+      <button class="minimize" onclick="window.truscore.windowControl('minimize')"></button>
+      <button class="maximize" onclick="window.truscore.windowControl('maximize')"></button>
+    </div>
+    <div id="titlebar-center">
+      <img src="../assets/logo.png" alt="SOVA" style="filter: invert(1); height: 16px;">
+    </div>
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <div id="status-badge" class="active">● WAITING</div>
+      <button id="back-btn">← Back</button>
+    </div>
+  </div>
+
+  <!-- State 0: Splash Screen -->
+  <section id="splash" class="state active">
+    <!-- Using inverted logo for black text on white bg -->
+    <img src="../assets/logo.png" alt="SOVA" style="filter: invert(1);">
+    <p>Security &amp; Offensive Vulnerability Adversary</p>
+
+    <div class="mode-toggle">
+      <button id="btn-demo-mode" class="mode-btn active">Demo Mode</button>
+      <button id="btn-live-mode" class="mode-btn">Live Mode</button>
+    </div>
+
+    <button id="btn-continue" class="btn-primary" style="margin-top: 4px;">Continue →</button>
+
+    <p id="splash-status" style="font-size: 11px; margin-top: 24px; opacity: 0.5;"></p>
+  </section>
+
+  <!-- State 1: Console / Input -->
+  <section id="console" class="state" style="display: none;">
+
+    <!-- Left Pane: Target & History -->
+    <div class="console-left glass-card">
+      <div class="input-group">
+        <div class="heading-caps">Target Endpoint</div>
+        <input type="url" id="target-url" placeholder="https://api.example.com or user domain" value="https://gemini.google.com">
+      </div>
+
+      <div class="heading-caps" style="margin-top: 16px;">Previous Audits</div>
+      <div class="audit-list">
+        <!-- Static demo history -->
+        <div class="audit-item">
+          <div>
+            <div class="audit-name">Customer Service Bot v4</div>
+            <div class="audit-meta">Feb 28, 2026 · SRS 710</div>
+          </div>
+          <div class="badge pass">PASS</div>
+        </div>
+        <div class="audit-item">
+          <div>
+            <div class="audit-name">HR Onboarding Agent</div>
+            <div class="audit-meta">Feb 26, 2026 · SRS 320</div>
+          </div>
+          <div class="badge fail">FAIL</div>
+        </div>
+        <div class="audit-item">
+          <div>
+            <div class="audit-name">DevOps Pipeline Orchestrator</div>
+            <div class="audit-meta">Feb 24, 2026 · SRS 680</div>
+          </div>
+          <div class="badge pass">PASS</div>
+        </div>
+        <div class="audit-item">
+          <div>
+            <div class="audit-name">Financial Advisory Bot</div>
+            <div class="audit-meta">Feb 21, 2026 · SRS 290</div>
+          </div>
+          <div class="badge fail">FAIL</div>
+        </div>
+        <div class="audit-item">
+          <div>
+            <div class="audit-name">Legal Document Analyzer</div>
+            <div class="audit-meta">Feb 18, 2026 · SRS 740</div>
+          </div>
+          <div class="badge pass">PASS</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Pane: Chat Intake -->
+    <div class="console-right glass-card" style="display: flex; flex-direction: column;">
+      <div class="heading-caps" style="display: flex; justify-content: space-between;">
+        <span>SOVA Assistant</span>
+        <span style="display: flex; gap: 8px;">
+          <button id="btn-analyze" class="chat-btn">Analyze Architecture</button>
+          <button id="btn-strike" class="btn-primary" disabled>Initiate Actuarial Strike</button>
+        </span>
+      </div>
+
+      <div id="chat-container">
+        <!-- Chat bubbles inject here -->
+      </div>
+
+      <div class="chat-input-area" style="margin-top: auto; padding-top: 16px;">
+        <input type="text" id="chat-input" placeholder="Type a message or select an option above...">
+        <button id="btn-chat-send" class="btn-primary" style="padding: 12px 16px;">Send</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- State 2: War Room -->
+  <section id="warroom" class="state" style="display: none;">
+    <!-- Left: Command Log (LIVE MODE ONLY) -->
+    <div class="warroom-left glass-card live-only" style="flex-direction: column;">
+      <div class="heading-caps">Command Interface</div>
+      <div id="system-log" class="system-log">
+        <div class="log-entry highlight">[SYSTEM] System online. Awaiting commands.</div>
+        <div class="log-entry">[SYSTEM] Initializing SOVA visual agent...</div>
+      </div>
+    </div>
+
+    <!-- Center DEMO: 3-pane Worker Terminals (α Alpha · β Beta · γ Gamma) -->
+    <div class="warroom-center warroom-center-demo demo-only">
+      <div class="terminal-wrapper worker-alpha glass-card" style="padding: 16px;">
+        <div class="terminal-header">
+          <div class="heading-caps" style="margin: 0; color: var(--text-primary);"><span class="status-dot green"></span>α ALPHA · RECON</div>
+          <div class="heading-caps" id="alpha-status" style="margin: 0; color: var(--text-secondary);">● BOOTING</div>
+        </div>
+        <div id="alpha-terminal" class="terminal"></div>
+      </div>
+
+      <div class="terminal-wrapper worker-beta glass-card" style="padding: 16px;">
+        <div class="terminal-header">
+          <div class="heading-caps" style="margin: 0; color: var(--text-primary);"><span class="status-dot blue"></span>β BETA · EXPLORE</div>
+          <div class="heading-caps" id="beta-status" style="margin: 0; color: var(--text-secondary);">● BOOTING</div>
+        </div>
+        <div id="beta-terminal" class="terminal"></div>
+      </div>
+
+      <div class="terminal-wrapper worker-gamma glass-card" style="padding: 16px;">
+        <div class="terminal-header">
+          <div class="heading-caps" style="margin: 0; color: var(--text-primary);"><span class="status-dot orange"></span>γ GAMMA · ATTACK</div>
+          <div class="heading-caps" id="gamma-status" style="margin: 0; color: var(--text-secondary);">● WAITING</div>
+        </div>
+        <div id="gamma-terminal" class="terminal"></div>
+      </div>
+    </div>
+
+    <!-- Center LIVE: 2-pane Attacker / Victim -->
+    <div class="warroom-center warroom-center-live live-only">
+      <div class="terminal-wrapper glass-card" style="padding: 16px;">
+        <div class="terminal-header">
+          <div class="heading-caps" style="margin: 0; color: var(--text-primary);"><span class="status-dot green"></span>ATTACKER NODE (SOVA)</div>
+          <div class="heading-caps" id="attacker-status" style="margin: 0; color: var(--text-secondary);">● EXECUTING</div>
+        </div>
+        <div id="attacker-terminal" class="terminal"></div>
+      </div>
+
+      <div class="terminal-wrapper glass-card" style="padding: 16px;">
+        <div class="terminal-header">
+          <div class="heading-caps" style="margin: 0; color: var(--text-primary);"><span class="status-dot red"></span>VICTIM TELEMETRY</div>
+          <div class="heading-caps" id="victim-status" style="margin: 0; color: var(--text-secondary);">● LIVE</div>
+        </div>
+        <div id="victim-terminal" class="terminal"></div>
+      </div>
+    </div>
+
+    <!-- Score column (gauge + Conclude button) — Demo Mode: LEFT, Live Mode: RIGHT-of-center -->
+    <div class="warroom-score-col">
+      <div class="glass-card" style="display: flex; flex-direction: column; align-items: center; padding: 14px 14px 12px;">
+        <div class="heading-caps" style="letter-spacing: 0.15em; margin-bottom: 4px;">Sybil Resilience Score</div>
+
+        <!-- Mini live gauge — visible from the moment warroom opens -->
+        <div class="mini-gauge">
+          <svg viewBox="0 0 200 110" class="mini-gauge-svg">
+            <path class="mini-gauge-bg" d="M 20 100 A 80 80 0 0 1 180 100" />
+            <defs>
+              <linearGradient id="miniGaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#FF3B30" />
+                <stop offset="50%" stop-color="#FFD60A" />
+                <stop offset="100%" stop-color="#30D158" />
+              </linearGradient>
+            </defs>
+            <path id="mini-gauge-arc" class="mini-gauge-fg" d="M 20 100 A 80 80 0 0 1 180 100" />
+          </svg>
+          <div class="mini-gauge-center">
+            <div id="live-score" class="score-value">850</div>
+            <div class="score-total">/ 850</div>
+          </div>
+        </div>
+
+        <button id="btn-conclude" class="visible" style="margin-top: 12px;">Conclude Audit →</button>
+      </div>
+    </div>
+
+    <!-- Right: Graphs (liability bars + penalty feed) -->
+    <div class="warroom-right">
+      <div class="glass-card" style="flex: 1; display: flex; flex-direction: column;">
+        <div class="heading-caps">Algorithmic Liability</div>
+        <div class="liability-chart">
+          <!-- Bars injected via JS -->
+        </div>
+
+        <div class="heading-caps" style="margin-top: 20px; margin-bottom: 12px;">Live Penalty Feed</div>
+        <div id="penalty-feed" class="penalty-feed">
+          <!-- Penalties injected via JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- State 3: Results & Report -->
+  <section id="results" class="state" style="display: none;">
+    <div class="results-header">
+      <div class="results-title">Actuarial Audit Report</div>
+      <div id="results-session-id" class="results-subtitle">Completed · Session ATS-2026-8227</div>
+    </div>
+
+    <div class="gauge-container">
+      <svg class="gauge-svg" viewBox="0 0 400 200">
+        <!-- Background arc -->
+        <path class="gauge-arc-bg" d="M 50 180 A 150 150 0 0 1 350 180" />
+
+        <!-- Define gradient -->
+        <defs>
+          <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#FF3B30" />    <!-- Red -->
+            <stop offset="30%" stop-color="#FF6B35" />   <!-- Orange -->
+            <stop offset="70%" stop-color="#FFD60A" />   <!-- Yellow -->
+            <stop offset="100%" stop-color="#30D158" />  <!-- Green -->
+          </linearGradient>
+        </defs>
+
+        <!-- Foreground arc (Dash array/offset updated via JS) -->
+        <path id="gauge-arc" class="gauge-arc-fg" d="M 50 180 A 150 150 0 0 1 350 180" />
+      </svg>
+      <div class="gauge-center">
+        <div id="final-score" class="gauge-score">650</div>
+        <div class="gauge-total">/ 850</div>
+      </div>
+    </div>
+
+    <div id="risk-label" class="risk-label high">HIGH RISK</div>
+
+    <div class="metrics-grid">
+      <div class="metric-card glass-card">
+        <div class="metric-label heading-caps">Projected Premium Adj.</div>
+        <div id="metric-premium" class="metric-value val-orange">+23%</div>
+      </div>
+      <div class="metric-card glass-card">
+        <div class="metric-label heading-caps">Max Probable Loss (MPL)</div>
+        <div id="metric-mpl" class="metric-value">$600K</div>
+      </div>
+      <div class="metric-card glass-card">
+        <div class="metric-label heading-caps">Regulatory Compliance</div>
+        <div id="metric-reg" class="metric-value val-red">AT RISK</div>
+      </div>
+      <div class="metric-card glass-card">
+        <div class="metric-label heading-caps">Remediation Cost</div>
+        <div id="metric-remedy" class="metric-value">$32K</div>
+      </div>
+      <div class="metric-card glass-card">
+        <div class="metric-label heading-caps">Records Compromised</div>
+        <div id="metric-records" class="metric-value">0</div>
+      </div>
+      <div class="metric-card glass-card">
+        <div class="metric-label heading-caps">Mean Time To Breach</div>
+        <div id="metric-mtb" class="metric-value">3 Turns</div>
+      </div>
+    </div>
+
+    <div class="report-card-container">
+      <div class="heading-caps" style="color: var(--text-primary);">Developer Report Card — Forensic Stack Trace</div>
+      <div class="glass-card" style="padding: 16px; margin-top: 12px;">
+        <div class="terminal-header">
+          <div class="heading-caps" style="margin: 0; color: var(--text-primary);"><span class="status-dot"></span>EXPLOIT CHAIN & SENSOR TRACE</div>
+          <div class="heading-caps" style="margin: 0; color: var(--text-secondary);">● FORENSIC LOG</div>
+        </div>
+        <div id="report-terminal" class="terminal"></div>
+        <div style="display: flex; gap: 12px; margin-top: 16px;">
+          <button id="btn-dl-fin" class="btn-primary" style="flex: 1; display:flex; gap: 8px; justify-content:center;">
+             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+             Export Financial PDF
+          </button>
+          <button id="btn-dl-dev" class="btn-primary" style="flex: 1; display:flex; gap: 8px; justify-content:center; background: #333;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Export Developer PDF
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PDF Notification Toast -->
+  <div id="pdf-toast">
+    ✓ PDF Saved successfully
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/terminal.js"></script>
+  <script src="js/gauge.js"></script>
+  <script src="js/metrics.js"></script>
+  <script src="js/chat.js"></script>
+  <script src="js/reports.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
