@@ -10,13 +10,12 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/Electron-28-47848F?logo=electron&logoColor=white" alt="Electron" />
+  <img src="https://img.shields.io/badge/Node.js-20+-339933?logo=nodedotjs&logoColor=white" alt="Node.js" />
   <img src="https://img.shields.io/badge/Playwright-Core-2EAD33?logo=playwright&logoColor=white" alt="Playwright" />
   <img src="https://img.shields.io/badge/SQLite-WAL_Mode-003B57?logo=sqlite&logoColor=white" alt="SQLite" />
-  <img src="https://img.shields.io/badge/OpenRouter-Multi_Model-FF6600?logoColor=white" alt="OpenRouter" />
-  <img src="https://img.shields.io/badge/Claude-3.5_Sonnet-CC785C?logo=anthropic&logoColor=white" alt="Claude" />
-  <img src="https://img.shields.io/badge/GPT--4o-Mutations-412991?logo=openai&logoColor=white" alt="GPT-4o" />
-  <img src="https://img.shields.io/badge/MCP-Protocol-000000?logoColor=white" alt="MCP" />
+  <img src="https://img.shields.io/badge/Redis-Pub%2FSub-DC382D?logo=redis&logoColor=white" alt="Redis" />
+  <img src="https://img.shields.io/badge/Atlas_MCP-Custom-000000?logoColor=white" alt="Atlas MCP" />
+  <img src="https://img.shields.io/badge/LLM-Agnostic-8B5CF6?logoColor=white" alt="LLM Agnostic" />
   <img src="https://img.shields.io/badge/Build-0_Errors-30D158" alt="Build" />
 </p>
 
@@ -53,8 +52,8 @@ S.O.V.A
 │   ├── agents/                   # 7 AI Agents
 │   │   ├── base.ts               # Abstract agent foundation
 │   │   ├── explorer.ts           # DOM navigator (5-strategy click cascade)
-│   │   ├── strategist.ts         # Attack planner (Claude-powered)
-│   │   ├── mutator.ts            # Payload evolution (GPT-4o)
+│   │   ├── strategist.ts         # Attack planner (high-reasoning model)
+│   │   ├── mutator.ts            # Payload evolution (high-speed model)
 │   │   ├── recon.ts              # OSINT intelligence gatherer
 │   │   ├── judge.ts              # Verdict classifier (4-class)
 │   │   ├── attacker.ts           # Payload delivery coordinator
@@ -62,11 +61,11 @@ S.O.V.A
 │   ├── phases/                   # 5-Phase Attack Pipeline
 │   │   ├── phase1-recon.ts       # External intelligence (OSINT)
 │   │   ├── phase2-mapping.ts     # Surface discovery (login + DOM crawl)
-│   │   ├── phase3-planning.ts    # Attack strategy (Claude)
+│   │   ├── phase3-planning.ts    # Attack strategy generation
 │   │   ├── phase4-execution.ts   # Payload delivery (~480 lines)
 │   │   └── phase5-report.ts      # SRS scoring + PDF generation
-│   ├── llm/                      # Multi-Model AI Gateway
-│   │   ├── client.ts             # OpenRouter API, role-based routing
+│   ├── llm/                      # LLM-Agnostic Model Gateway
+│   │   ├── client.ts             # Multi-provider API, role-based routing
 │   │   └── roles.ts              # Model assignments per agent role
 │   ├── mcp/                      # Atlas MCP Browser Control
 │   │   ├── client.ts             # JSON-RPC transport, MCP protocol
@@ -74,7 +73,7 @@ S.O.V.A
 │   ├── explore/                  # Visual-Layer Attack Engine
 │   │   ├── visual-deliver.ts     # DOM payload delivery + active settling
 │   │   ├── visual-loop.ts        # Autonomous exploration (~730 lines)
-│   │   └── target-adapter.ts     # Per-domain navigation (Gemini/ChatGPT/generic)
+│   │   └── target-adapter.ts     # Per-domain navigation adapter
 │   ├── attacks/                  # Attack Payload Library
 │   │   ├── library.ts            # Template loader & selector
 │   │   └── templates/            # 9 JSONL families, 100+ payloads
@@ -119,8 +118,7 @@ S.O.V.A
 │   └── scripts/                  # Build & deployment
 │
 ├── package.json                  # Dependencies & scripts
-├── tsconfig.json                 # TypeScript configuration
-└── .env.example                  # Required environment variables
+└── tsconfig.json                 # TypeScript configuration
 ```
 
 ---
@@ -132,7 +130,7 @@ S.O.V.A
 │ Phase 1  │───▶│ Phase 2  │───▶│ Phase 3  │───▶│ Phase 4  │───▶│ Phase 5  │
 │  RECON   │    │ MAPPING  │    │ PLANNING │    │EXECUTION │    │  REPORT  │
 │          │    │          │    │          │    │          │    │          │
-│ External │    │ Login +  │    │ Claude   │    │ Payload  │    │ SRS 850  │
+│ External │    │ Login +  │    │ AI-Gen   │    │ Payload  │    │ SRS 850  │
 │ OSINT    │    │ DOM Crawl│    │ Strategy │    │ Delivery │    │ Scoring  │
 │ Dossier  │    │ Surfaces │    │ Attack   │    │ Mutation  │    │ PDF Gen  │
 │          │    │          │    │ Plan     │    │ Judging  │    │ PML Calc │
@@ -212,7 +210,7 @@ A deterministic, FICO-style grade that translates adversarial findings into a si
 | **5-Strategy Click Cascade** | Locator → Force → JS → Keyboard → CDP fallback |
 | **Mutation Queue Safeguards** | Per-root-parent caps prevent infinite mutation loops |
 | **Session Isolation** | Per-session Playwright profiles with zero cache contamination |
-| **Role-Based LLM Routing** | Claude for strategy, GPT-4o for mutations, mini for recon |
+| **Role-Based LLM Routing** | High-reasoning for strategy, high-speed for mutations, lightweight for recon |
 | **Cross-Session Memory** | LogRefinerAgent distills sessions into reusable Experience Cases |
 | **Dynamic Auth Detection** | Hostname-based redirect checking catches session expiry mid-attack |
 
@@ -224,12 +222,11 @@ A deterministic, FICO-style grade that translates adversarial findings into a si
 |---|---|
 | **Language** | TypeScript 5.x (CLI), JavaScript (Electron) |
 | **Runtime** | Node.js 20+ |
-| **Desktop** | Electron 28 with bundled Chromium |
-| **Browser Automation** | Playwright-core via Atlas MCP Server |
-| **AI Models** | Claude 3.5 Sonnet, GPT-4o, GPT-4o-mini (via OpenRouter) |
+| **Browser Automation** | Playwright-core via Atlas MCP Server (custom-built) |
+| **AI Models** | LLM-agnostic — any foundation model hot-swappable per role |
 | **Protocol** | MCP (Model Context Protocol) over JSON-RPC stdio |
 | **Database** | SQLite with better-sqlite3 (WAL mode) |
-| **Build** | electron-builder, NSIS installer |
+| **Pub/Sub** | Redis for swarm coordination |
 | **Validation** | Zod schema validation for all LLM outputs |
 
 ---
@@ -243,7 +240,7 @@ A deterministic, FICO-style grade that translates adversarial findings into a si
 | Attack phases | 5 sequential |
 | Attack template categories | 9 JSONL families |
 | Attack payloads | 100+ |
-| LLM models | 3 families, role-routed |
+| LLM models | Any provider, role-routed (agnostic) |
 | TypeScript build | **0 errors** |
 | Largest single file | `nova-attacker.js` — 1,070 lines |
 | Largest TS file | `visual-loop.ts` — 730 lines |
