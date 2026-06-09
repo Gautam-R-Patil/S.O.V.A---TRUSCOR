@@ -1,38 +1,29 @@
 /**
- * MutatorAgent — Payload Evolution Engine (GPT-4o-powered)
+ * mutator.ts
+ * S.O.V.A Engine — TypeScript
  *
- * When an attack fails, the Mutator evolves the payload:
- * - Applies encoding transformations (Base64, ROT13, Unicode)
- * - Restructures prompt injection syntax
- * - Adds context-poisoning wrappers
- * - Splits payloads across multiple turns
- * - Generates semantic variants that bypass keyword filters
+ * Module: src\agents\mutator.ts
+ * Last synced: 2026-06-09
  *
- * Mutation queue safeguards:
- * - Tracks descendants per root-parent payload
- * - Caps at 5 mutations per root to prevent infinite loops
- * - Appends variants to back of execution queue
+ * Complexity: 63 lines · 6 functions · 1 classes
  *
- * Complexity: ~90 lines · 6+ mutation strategies · Queue management
- * Descendant tracking · Semantic-preserving transformations
+ * Classes:
+ *   - MutatorAgent
+ *
+ * Functions:
+ *   - object()
+ *   - string()
+ *   - array()
+ *   - buildPrompt()
+ *   - slice()
+ *   - join()
+ *
+ * Exports:
+ *   - MutatorAgent
  *
  * @proprietary Core implementation omitted from public repository.
+ * @see README.md for architecture overview.
  */
 
-import { BaseAgent } from "./base.js";
-
-export class MutatorAgent extends BaseAgent {
-    /** @proprietary Evolves a failed payload into N semantic variants. */
-    async run(input: {
-        originalPayload: string;
-        failureReason: string;
-        targetContext: string;
-    }): Promise<{
-        mutations: string[];
-        strategies: string[];
-    }> {
-        // [PROPRIETARY] — Payload mutation, encoding, and semantic
-        // variance generation logic omitted.
-        throw new Error("Proprietary implementation");
-    }
-}
+// This file is a public template. Implementation is proprietary.
+// See the project README for architecture documentation.

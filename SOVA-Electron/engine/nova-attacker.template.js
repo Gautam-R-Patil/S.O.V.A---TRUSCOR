@@ -1,26 +1,51 @@
 /**
- * Nova Attacker — Adaptive AI Attack Engine
+ * nova-attacker.js
+ * S.O.V.A Engine — JavaScript
  *
- * The core offensive engine for Live mode. Unlike Demo mode's scripted
- * narrative, Nova thinks adaptively — no predetermined script.
+ * Module: SOVA-Electron\engine\nova-attacker.js
+ * Last synced: 2026-06-09
  *
- * Architecture:
- * - Spawns real Chromium browser instances
- * - Navigates to target autonomously
- * - Identifies attack surfaces in real-time
- * - Generates and evolves payloads using LLM
- * - Classifies outcomes and adapts strategy
- * - Streams events to Electron UI via IPC
+ * Complexity: 569 lines · 42 functions · 1 classes
  *
- * Key features:
- * - Multi-strategy chat input detection
- * - Active response settling (character-stability polling)
- * - Automated Google OAuth handling
- * - Prompt dismisser for Chromium dialogs
- * - 6-minute safety budget with graceful shutdown
+ * Classes:
+ *   - NovaAttacker
  *
- * Complexity: ~1,070 lines · Real-time adaptive attacks
- * Browser automation · LLM-powered strategy · Auth handling
+ * Functions:
+ *   - constructor()
+ *   - run()
+ *   - emitLog()
+ *   - launch()
+ *   - newContext()
+ *   - 0()
+ *   - newPage()
+ *   - goto()
+ *   - close()
+ *   - Error()
+ *   - sleep()
+ *   - RECONNAISSANCE()
+ *   - phase1_Recon()
+ *   - MOVEMENT()
+ *   - phase2_Email()
+ *   - GATHERING()
+ *   - phase3_Documents()
+ *   - PERSISTENCE()
+ *   - phase4_Settings()
+ *   - EXPLOITATION()
+ *   - phase5_Exploit()
+ *   - phase6_Confirm()
+ *   - getFinalScore()
+ *   - getDistribution()
+ *   - sendChatMessage()
+ *   - toLowerCase()
+ *   - applyPenalty()
+ *   - click()
+ *   - email()
+ *   - eval()
+ *   ... and 12 more
  *
  * @proprietary Core implementation omitted from public repository.
+ * @see README.md for architecture overview.
  */
+
+// This file is a public template. Implementation is proprietary.
+// See the project README for architecture documentation.

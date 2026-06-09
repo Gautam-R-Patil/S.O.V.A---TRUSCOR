@@ -1,34 +1,52 @@
 /**
- * Visual Exploration Loop
+ * visual-loop.ts
+ * S.O.V.A Engine — TypeScript
  *
- * Autonomous DOM exploration engine that navigates the target
- * application by analyzing page snapshots and deciding actions.
+ * Module: src\explore\visual-loop.ts
+ * Last synced: 2026-06-09
  *
- * Loop cycle:
- * 1. Capture DOM snapshot via AtlasClient
- * 2. Feed snapshot to ExplorerAgent
- * 3. Execute agent's chosen action (click, type, navigate)
- * 4. Record discovered surfaces and visited URLs
- * 5. Check for dead-ends and session expiry
- * 6. Repeat until surface quota met or budget exhausted
+ * Complexity: 429 lines · 59 functions
  *
- * Anti-loop measures:
- * - Visited URL set prevents revisiting
- * - Dead-end blacklist blocks known terminal states
- * - Max consecutive failures triggers backtracking
+ * Functions:
+ *   - object()
+ *   - enum()
+ *   - string()
+ *   - elements()
+ *   - in()
+ *   - menus()
+ *   - end()
+ *   - actions()
+ *   - type()
+ *   - runVisualLoop()
+ *   - info()
+ *   - browserNavigate()
+ *   - sleep()
+ *   - now()
+ *   - ensureSingleTab()
+ *   - Context()
+ *   - browserScreenshot()
+ *   - browserExtractText()
+ *   - getCurrentUrl()
+ *   - includes()
+ *   - DOM()
+ *   - extractInteractiveElements()
+ *   - state()
+ *   - classifyElement()
+ *   - slice()
+ *   - buildSelector()
+ *   - toLowerCase()
+ *   - add()
+ *   - push()
+ *   - newId()
+ *   ... and 29 more
  *
- * Complexity: ~730 lines · DOM snapshot analysis · Action execution
- * Dead-end detection · Surface classification · Backtracking
+ * Exports:
+ *   - function
+ *   - function
  *
  * @proprietary Core implementation omitted from public repository.
+ * @see README.md for architecture overview.
  */
 
-export async function runVisualLoop(
-    atlas: unknown,
-    explorer: unknown,
-    opts: unknown
-): Promise<{ surfaces: unknown[]; history: unknown[] }> {
-    // [PROPRIETARY] — Exploration loop, snapshot analysis,
-    // and surface discovery logic omitted.
-    throw new Error("Proprietary implementation");
-}
+// This file is a public template. Implementation is proprietary.
+// See the project README for architecture documentation.

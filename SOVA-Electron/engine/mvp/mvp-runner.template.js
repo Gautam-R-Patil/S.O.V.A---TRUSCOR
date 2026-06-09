@@ -1,20 +1,41 @@
 /**
- * MVP Runner — Demo Mode Orchestrator
+ * mvp-runner.js
+ * S.O.V.A Engine — JavaScript
  *
- * Launches the scripted 3-worker swarm demonstration:
- *   1. Calculates screen geometry for 3-pane layout
- *   2. Launches α Alpha (Recon) → DuckDuckGo OSINT
- *   3. Launches β Beta (Explorer) → Gemini /saved-info persona planting
- *   4. Launches γ Gamma (Attacker) → 3-turn jailbreak sequence
- *   5. Coordinates worker handoffs (β signals → γ attacks)
- *   6. Fires scoring events as workers complete phases
- *   7. Closes all popups and emits final SRS score
+ * Module: SOVA-Electron\engine\mvp\mvp-runner.js
+ * Last synced: 2026-06-09
  *
- * All 3 workers run REAL Chromium browsers doing REAL DOM interactions.
- * The scripted element is the chalk terminal narrative, not the browser.
+ * Complexity: 182 lines · 24 functions
  *
- * Complexity: ~330 lines · 3 parallel workers · Screen geometry
- * Worker coordination · Scoring timeline · Graceful cleanup
+ * Functions:
+ *   - workers()
+ *   - makeEmitter()
+ *   - emit()
+ *   - send()
+ *   - emitPhase()
+ *   - runMvpDemo()
+ *   - Error()
+ *   - ScoringEngine()
+ *   - getFinalScore()
+ *   - applyPenalty()
+ *   - runAlpha()
+ *   - error()
+ *   - runBeta()
+ *   - launchGamma()
+ *   - recon()
+ *   - then()
+ *   - planting()
+ *   - applyWorkerPenalty()
+ *   - sleep()
+ *   - sequence()
+ *   - runGammaAttack()
+ *   - allSettled()
+ *   - closePopup()
+ *   - getDistribution()
  *
- * @proprietary Orchestration and worker coordination logic omitted.
+ * @proprietary Core implementation omitted from public repository.
+ * @see README.md for architecture overview.
  */
+
+// This file is a public template. Implementation is proprietary.
+// See the project README for architecture documentation.

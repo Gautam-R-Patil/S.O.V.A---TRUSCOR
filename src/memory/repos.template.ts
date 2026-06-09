@@ -1,15 +1,51 @@
 /**
- * Database Repositories — Type-Safe Data Access Layer
+ * repos.ts
+ * S.O.V.A Engine — TypeScript
  *
- * Repository pattern over SQLite with prepared statements:
- *   SessionRepo    — insert, updateStatus, getById
- *   SurfaceRepo    — insert, getBySession
- *   AttackRepo     — insert, getBySession
- *   ResultRepo     — insert, getBySession, getByVerdict
- *   ExperienceRepo — insert, getByDomain, getByGenre
+ * Module: src\memory\repos.ts
+ * Last synced: 2026-06-09
  *
- * Complexity: ~210 lines · 5 repositories · Prepared statements · Type-safe
+ * Complexity: 129 lines · 17 functions · 6 classes
  *
- * @proprietary Schema definitions and query logic omitted.
+ * Classes:
+ *   - SessionRepo
+ *   - SurfaceRepo
+ *   - AttackRepo
+ *   - ResultRepo
+ *   - SnapshotRepo
+ *   - ExperienceRepo
+ *
+ * Functions:
+ *   - constructor()
+ *   - insert()
+ *   - prepare()
+ *   - run()
+ *   - updateStatus()
+ *   - listBySession()
+ *   - map()
+ *   - Date()
+ *   - searchSimilar()
+ *   - keywords()
+ *   - makeRepos()
+ *   - SessionRepo()
+ *   - SurfaceRepo()
+ *   - AttackRepo()
+ *   - ResultRepo()
+ *   - SnapshotRepo()
+ *   - ExperienceRepo()
+ *
+ * Exports:
+ *   - SessionRepo
+ *   - SurfaceRepo
+ *   - AttackRepo
+ *   - ResultRepo
+ *   - SnapshotRepo
+ *   - ExperienceRepo
+ *   - makeRepos
+ *
+ * @proprietary Core implementation omitted from public repository.
+ * @see README.md for architecture overview.
  */
-export function makeRepos(db: unknown): unknown { throw new Error("Proprietary"); }
+
+// This file is a public template. Implementation is proprietary.
+// See the project README for architecture documentation.

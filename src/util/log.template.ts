@@ -1,32 +1,33 @@
 /**
- * attacker.ts
+ * log.ts
  * S.O.V.A Engine — TypeScript
  *
- * Module: src\agents\attacker.ts
+ * Module: src\util\log.ts
  * Last synced: 2026-06-09
  *
- * Complexity: 61 lines · 13 functions · 1 classes
+ * Complexity: 57 lines · 14 functions · 1 classes
  *
  * Classes:
- *   - AttackerAgent
+ *   - Logger
  *
  * Functions:
- *   - object()
- *   - string()
- *   - array()
- *   - enum()
- *   - number()
- *   - optional()
- *   - selector()
- *   - payload()
- *   - has()
- *   - buildPrompt()
- *   - slice()
- *   - TEXT()
- *   - join()
+ *   - constructor()
+ *   - mkdirSync()
+ *   - createWriteStream()
+ *   - info()
+ *   - Date()
+ *   - stringify()
+ *   - error()
+ *   - warn()
+ *   - phase()
+ *   - logLLMCall()
+ *   - write()
+ *   - logAtlasCall()
+ *   - close()
+ *   - end()
  *
  * Exports:
- *   - AttackerAgent
+ *   - Logger
  *
  * @proprietary Core implementation omitted from public repository.
  * @see README.md for architecture overview.

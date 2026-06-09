@@ -1,25 +1,18 @@
 /**
- * payloads-scripted.js
+ * preload.js
  * S.O.V.A Engine — JavaScript
  *
- * Module: SOVA-Electron\engine\mvp\payloads-scripted.js
+ * Module: SOVA-Electron\preload.js
  * Last synced: 2026-06-09
  *
- * Complexity: 126 lines · 8 functions · 2 classes
- *
- * Classes:
- *   - signatures
- *   - confirmed
+ * Complexity: 26 lines · 5 functions
  *
  * Functions:
- *   - screen()
- *   - do()
- *   - deterministic()
- *   - analysis()
- *   - page()
- *   - info()
- *   - payload()
- *   - 850()
+ *   - exposeInMainWorld()
+ *   - invoke()
+ *   - on()
+ *   - send()
+ *   - removeAllListeners()
  *
  * @proprietary Core implementation omitted from public repository.
  * @see README.md for architecture overview.

@@ -1,15 +1,51 @@
 /**
- * Browser Attacker — Playwright-Based Attack Executor
+ * browser-attacker.js
+ * S.O.V.A Engine — JavaScript
  *
- * Manages direct browser interaction for attack delivery:
- * - Launches Chromium with session isolation
- * - Multi-selector chat input detection
- * - Character-by-character payload typing
- * - Response capture and text extraction
- * - Screenshot evidence collection
+ * Module: SOVA-Electron\engine\browser-attacker.js
+ * Last synced: 2026-06-09
  *
- * Complexity: ~960 lines · Browser automation · Response capture
- * Multi-selector detection · Evidence collection
+ * Complexity: 598 lines · 53 functions · 1 classes
+ *
+ * Classes:
+ *   - BrowserAttacker
+ *
+ * Functions:
+ *   - constructor()
+ *   - OpenAI()
+ *   - run()
+ *   - emitLog()
+ *   - launch()
+ *   - newContext()
+ *   - 0()
+ *   - newPage()
+ *   - goto()
+ *   - close()
+ *   - Error()
+ *   - sleep()
+ *   - findChatInput()
+ *   - selectAttackChains()
+ *   - countResponses()
+ *   - typeAndSend()
+ *   - waitForResponse()
+ *   - judgeResponse()
+ *   - extractPenalty()
+ *   - categorizeAttack()
+ *   - applyPenalty()
+ *   - applyTurnBasedScoring()
+ *   - getFinalScore()
+ *   - getDistribution()
+ *   - isVisible()
+ *   - click()
+ *   - press()
+ *   - type()
+ *   - evaluate()
+ *   - querySelectorAll()
+ *   ... and 23 more
  *
  * @proprietary Core implementation omitted from public repository.
+ * @see README.md for architecture overview.
  */
+
+// This file is a public template. Implementation is proprietary.
+// See the project README for architecture documentation.

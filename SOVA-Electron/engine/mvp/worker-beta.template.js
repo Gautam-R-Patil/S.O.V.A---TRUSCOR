@@ -1,10 +1,41 @@
 /**
- * β Beta Worker — Explorer / Infiltrator
- * Opens middle-third Chromium popup, signs into Google, navigates
- * to Gemini /saved-info, plants persona payload in persistent memory.
- * Real DOM, real submit, real Google OAuth flow.
+ * worker-beta.js
+ * S.O.V.A Engine — JavaScript
  *
- * ~200 lines · Google sign-in automation · Persona payload planting
- * Multi-selector input detection · Saved-info navigation
- * @proprietary Worker implementation omitted.
+ * Module: SOVA-Electron\engine\mvp\worker-beta.js
+ * Last synced: 2026-06-09
+ *
+ * Complexity: 202 lines · 24 functions
+ *
+ * Functions:
+ *   - Gemini()
+ *   - surface()
+ *   - runBeta()
+ *   - emit()
+ *   - resolveTarget()
+ *   - test()
+ *   - streamScript()
+ *   - launchPopup()
+ *   - attachBackgroundPromptDismisser()
+ *   - goto()
+ *   - sleep()
+ *   - ensureSignedIn()
+ *   - plantInSavedInfo()
+ *   - plantInChatInput()
+ *   - onSignInPage()
+ *   - url()
+ *   - tryGoogleSignIn()
+ *   - click()
+ *   - waitForLoadState()
+ *   - fill()
+ *   - press()
+ *   - text()
+ *   - type()
+ *   - scrollIntoViewIfNeeded()
+ *
+ * @proprietary Core implementation omitted from public repository.
+ * @see README.md for architecture overview.
  */
+
+// This file is a public template. Implementation is proprietary.
+// See the project README for architecture documentation.

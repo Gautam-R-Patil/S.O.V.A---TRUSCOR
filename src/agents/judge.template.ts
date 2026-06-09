@@ -1,40 +1,35 @@
 /**
- * JudgeAgent — Verdict Classifier
+ * judge.ts
+ * S.O.V.A Engine — TypeScript
  *
- * After each attack attempt, classifies the outcome:
- * - SUCCESS: Attack achieved its objective (jailbreak, data leak, etc.)
- * - PARTIAL: Guardrails weakened but not fully bypassed
- * - FAILURE: Target successfully defended
- * - ERROR: Technical failure unrelated to target defense
+ * Module: src\agents\judge.ts
+ * Last synced: 2026-06-09
  *
- * Classification criteria:
- * - Analyzes AI response for compliance indicators
- * - Detects guardrail bypass signatures
- * - Identifies data leakage patterns
- * - Assesses behavioral changes in target system
- * - Provides structured reasoning for each verdict
+ * Complexity: 69 lines · 12 functions · 1 classes
  *
- * Complexity: ~100 lines · 4-class classification · Zod schema
- * Structured reasoning · Confidence scoring
+ * Classes:
+ *   - JudgeAgent
+ *
+ * Functions:
+ *   - object()
+ *   - preprocess()
+ *   - toLowerCase()
+ *   - enum()
+ *   - string()
+ *   - min()
+ *   - number()
+ *   - array()
+ *   - done()
+ *   - buildPrompt()
+ *   - slice()
+ *   - join()
+ *
+ * Exports:
+ *   - JudgeAgent
  *
  * @proprietary Core implementation omitted from public repository.
+ * @see README.md for architecture overview.
  */
 
-import { BaseAgent } from "./base.js";
-
-export class JudgeAgent extends BaseAgent {
-    /** @proprietary Classifies attack outcome with structured reasoning. */
-    async run(input: {
-        payload: string;
-        responseText: string;
-        expectedBehavior: string;
-    }): Promise<{
-        verdict: "success" | "partial" | "failure" | "error";
-        reasoning: string;
-        confidence: number;
-    }> {
-        // [PROPRIETARY] — Verdict classification, guardrail bypass
-        // detection, and reasoning synthesis logic omitted.
-        throw new Error("Proprietary implementation");
-    }
-}
+// This file is a public template. Implementation is proprietary.
+// See the project README for architecture documentation.

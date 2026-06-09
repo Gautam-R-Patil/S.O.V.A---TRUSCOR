@@ -1,25 +1,31 @@
 /**
- * Target Adapter — Per-Domain Navigation Abstraction
+ * target-adapter.ts
+ * S.O.V.A Engine — TypeScript
  *
- * Different AI platforms have different DOM structures. The adapter
- * pattern provides custom selectors and navigation routines per target:
+ * Module: src\explore\target-adapter.ts
+ * Last synced: 2026-06-09
  *
- *   Target          → Chat Input Selector  → Submit Method
- *   ──────────────────────────────────────────────────────
- *   Gemini          → rich-textarea        → Enter key
- *   ChatGPT         → #prompt-textarea     → Send button
- *   Claude.ai       → [contenteditable]    → Enter key
- *   Generic         → textarea fallback    → Enter / button
+ * Complexity: 109 lines · 8 functions
  *
- * Extensible: new targets added by implementing the adapter interface.
+ * Functions:
+ *   - nested()
+ *   - navigateDeeper()
+ *   - info()
+ *   - browserClick()
+ *   - sleep()
+ *   - getAdapterForUrl()
+ *   - URL()
+ *   - Promise()
  *
- * Complexity: ~130 lines · 4 target adapters · Fallback chain
+ * Exports:
+ *   - GEMINI_ADAPTER
+ *   - CHATGPT_ADAPTER
+ *   - DEFAULT_ADAPTER
+ *   - getAdapterForUrl
  *
  * @proprietary Core implementation omitted from public repository.
+ * @see README.md for architecture overview.
  */
 
-export function getTargetAdapter(url: string): unknown {
-    // [PROPRIETARY] — Target-specific DOM selectors and
-    // navigation routines omitted.
-    throw new Error("Proprietary implementation");
-}
+// This file is a public template. Implementation is proprietary.
+// See the project README for architecture documentation.

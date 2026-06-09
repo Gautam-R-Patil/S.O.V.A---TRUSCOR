@@ -1,24 +1,39 @@
 /**
- * Login Handler — Automated Authentication Engine
+ * handler.ts
+ * S.O.V.A Engine — TypeScript
  *
- * Handles login flows for various target platforms:
- * - Google OAuth (Gemini, Workspace apps)
- * - Email/password forms (generic)
- * - SSO redirect detection and following
- * - Session cookie persistence
+ * Module: src\login\handler.ts
+ * Last synced: 2026-06-09
  *
- * Dynamic auth detection:
- * - Hostname-based redirect checking (accounts.google.com detection)
- * - Multi-selector heuristics for login state
- * - Post-login navigation verification
+ * Complexity: 137 lines · 14 functions · 2 classes
  *
- * Complexity: ~190 lines · Multi-platform auth · Redirect detection
- * Session persistence · Error recovery
+ * Classes:
+ *   - LoginDetector
+ *   - LoginFiller
  *
- * @proprietary Authentication automation logic omitted.
+ * Functions:
+ *   - constructor()
+ *   - isLoginPage()
+ *   - browserExtractText()
+ *   - toLowerCase()
+ *   - filter()
+ *   - browserExtractHtml()
+ *   - includes()
+ *   - fill()
+ *   - tryGoogleSignIn()
+ *   - directFormFill()
+ *   - error()
+ *   - browserClick()
+ *   - sleep()
+ *   - browserType()
+ *
+ * Exports:
+ *   - LoginDetector
+ *   - LoginFiller
+ *
+ * @proprietary Core implementation omitted from public repository.
+ * @see README.md for architecture overview.
  */
-export async function handleLogin(atlas: unknown, config: unknown): Promise<boolean> {
-    // [PROPRIETARY] — Login automation, auth detection, and
-    // session management logic omitted.
-    throw new Error("Proprietary implementation");
-}
+
+// This file is a public template. Implementation is proprietary.
+// See the project README for architecture documentation.

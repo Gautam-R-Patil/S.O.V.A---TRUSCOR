@@ -1,36 +1,54 @@
 /**
- * AtlasClient — MCP Browser Control Interface
+ * client.ts
+ * S.O.V.A Engine — TypeScript
  *
- * Communicates with the Atlas MCP server over JSON-RPC stdio transport.
- * Provides high-level browser automation commands:
+ * Module: src\mcp\client.ts
+ * Last synced: 2026-06-09
  *
- *   navigate(url)        → Load a page
- *   click(selector)      → Click an element (5-strategy cascade)
- *   type(selector, text) → Type into an input
- *   snapshot()           → Capture current DOM state
- *   screenshot()         → Capture visual screenshot
- *   evaluate(js)         → Execute arbitrary JavaScript
+ * Complexity: 340 lines · 54 functions · 1 classes
  *
- * Session-isolated: Each session gets its own Playwright browser context
- * with unique profile directory — zero cache contamination across runs.
+ * Classes:
+ *   - AtlasClient
  *
- * Complexity: ~450 lines · JSON-RPC transport · MCP protocol
- * 5-strategy click cascade · Session isolation · Graceful shutdown
+ * Functions:
+ *   - constructor()
+ *   - connect()
+ *   - Promise()
+ *   - setTimeout()
+ *   - on()
+ *   - toString()
+ *   - slice()
+ *   - parse()
+ *   - handleMessage()
+ *   - set()
+ *   - clearTimeout()
+ *   - write()
+ *   - info()
+ *   - resolve()
+ *   - get()
+ *   - delete()
+ *   - reject()
+ *   - Notifications()
+ *   - callTool()
+ *   - now()
+ *   - find()
+ *   - parts()
+ *   - logAtlasCall()
+ *   - newId()
+ *   - Date()
+ *   - browserNavigate()
+ *   - browserClick()
+ *   - browserType()
+ *   - browserFillForm()
+ *   - browserUpload()
+ *   ... and 24 more
+ *
+ * Exports:
+ *   - AtlasClient
  *
  * @proprietary Core implementation omitted from public repository.
+ * @see README.md for architecture overview.
  */
 
-export class AtlasClient {
-    constructor(child: unknown, log: unknown) {
-        // [PROPRIETARY] — JSON-RPC transport setup omitted.
-    }
-
-    async connect(): Promise<void> { /* [PROPRIETARY] */ }
-    async navigate(url: string): Promise<void> { /* [PROPRIETARY] */ }
-    async click(selector: string): Promise<void> { /* [PROPRIETARY] */ }
-    async type(selector: string, text: string): Promise<void> { /* [PROPRIETARY] */ }
-    async snapshot(): Promise<string> { throw new Error("Proprietary"); }
-    async screenshot(): Promise<string> { throw new Error("Proprietary"); }
-    async evaluate(js: string): Promise<unknown> { throw new Error("Proprietary"); }
-    async close(): Promise<void> { /* [PROPRIETARY] */ }
-}
+// This file is a public template. Implementation is proprietary.
+// See the project README for architecture documentation.

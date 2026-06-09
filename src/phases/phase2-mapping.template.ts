@@ -1,32 +1,37 @@
 /**
- * Phase 2: Surface Mapping (includes authentication)
+ * phase2-mapping.ts
+ * S.O.V.A Engine — TypeScript
  *
- * Opens a real browser, logs into the target if credentials are provided,
- * and autonomously explores the application to discover attack surfaces.
+ * Module: src\phases\phase2-mapping.ts
+ * Last synced: 2026-06-09
  *
- * Capabilities:
- * - Automated login with dynamic auth detection
- *   (hostname-based redirect checking, multi-selector heuristics)
- * - DOM crawling via ExplorerAgent with 5-strategy click cascade
- * - Attack surface identification (textareas, chat inputs, file uploads,
- *   contenteditable divs, API endpoints)
- * - Visited-set tracking with dead-end blacklisting
- * - Screenshot capture at each exploration step
+ * Complexity: 97 lines · 17 functions
  *
- * Output: Array of Surface objects (id, type, selector, url, contextLabel)
+ * Functions:
+ *   - Mapping()
+ *   - runMappingPhase()
+ *   - phase()
+ *   - join()
+ *   - URL()
+ *   - searchSimilar()
+ *   - parse()
+ *   - info()
+ *   - map()
+ *   - warn()
+ *   - runVisualLoop()
+ *   - toLowerCase()
+ *   - add()
+ *   - push()
+ *   - insert()
+ *   - fileWrite()
+ *   - stringify()
  *
- * Dependencies: AtlasClient (Playwright), ExplorerAgent
- * Complexity: ~150 lines · Auth automation · DOM exploration loop
- * 5 click strategies · Surface classification · Dead-end detection
+ * Exports:
+ *   - function
  *
  * @proprietary Core implementation omitted from public repository.
+ * @see README.md for architecture overview.
  */
 
-export async function runMappingPhase(deps: unknown, dossier: unknown): Promise<{
-    surfaces: unknown[];
-    history: unknown[];
-}> {
-    // [PROPRIETARY] — Login automation, DOM exploration,
-    // and surface discovery logic omitted.
-    throw new Error("Proprietary implementation");
-}
+// This file is a public template. Implementation is proprietary.
+// See the project README for architecture documentation.

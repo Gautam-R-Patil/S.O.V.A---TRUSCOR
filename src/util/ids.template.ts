@@ -1,30 +1,18 @@
 /**
- * library.ts
+ * ids.ts
  * S.O.V.A Engine — TypeScript
  *
- * Module: src\attacks\library.ts
+ * Module: src\util\ids.ts
  * Last synced: 2026-06-09
  *
- * Complexity: 53 lines · 11 functions · 1 classes
- *
- * Classes:
- *   - AttackLibrary
+ * Complexity: 6 lines · 2 functions
  *
  * Functions:
- *   - load()
- *   - join()
- *   - error()
- *   - readdirSync()
- *   - readFileSync()
- *   - trim()
- *   - push()
- *   - candidatesFor()
- *   - filter()
- *   - includes()
- *   - all()
+ *   - newId()
+ *   - ulid()
  *
  * Exports:
- *   - AttackLibrary
+ *   - newId
  *
  * @proprietary Core implementation omitted from public repository.
  * @see README.md for architecture overview.

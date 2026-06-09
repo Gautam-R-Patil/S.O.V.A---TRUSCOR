@@ -1,41 +1,40 @@
 /**
- * Phase 5: Report Generation & SRS Scoring
+ * phase5-report.ts
+ * S.O.V.A Engine — TypeScript
  *
- * Final phase — synthesizes all results into:
+ * Module: src\phases\phase5-report.ts
+ * Last synced: 2026-06-09
  *
- * 1. Sybil Resilience Score (SRS) — FICO-style grade (0-850)
- *    - 6 penalty categories: AUTH, DB, PII, LOGIC, RCE, DOS
- *    - Industry multiplier (finance/healthcare = 1.2×)
- *    - Deductions per successful attack by severity
+ * Complexity: 177 lines · 20 functions
  *
- * 2. Financial Report (PDF)
- *    - SRS gauge visualization
- *    - Probable Maximum Loss (PML) calculation
- *    - Premium adjustment recommendations
- *    - Compliance gap analysis
+ * Functions:
+ *   - jailbreaks()
+ *   - runReportPhase()
+ *   - phase()
+ *   - filter()
+ *   - calculateGrade()
+ *   - Date()
+ *   - floor()
+ *   - Refused()
+ *   - join()
+ *   - map()
+ *   - slice()
+ *   - Refusals()
+ *   - Set()
+ *   - jailbreak()
+ *   - success()
+ *   - mkdirSync()
+ *   - writeFileSync()
+ *   - fileWrite()
+ *   - info()
+ *   - log()
  *
- * 3. Developer Report (Markdown)
- *    - Attack-by-attack forensic breakdown
- *    - Reproduction steps for each finding
- *    - Remediation recommendations
- *    - Severity-ranked vulnerability list
- *
- * Output: report.md + report-financial.pdf in session output directory
- *
- * Dependencies: LLMClient (report synthesis), session data
- * Complexity: ~230 lines · SRS scoring engine · PDF generation
- * Financial metrics · Forensic stack traces · Remediation guidance
+ * Exports:
+ *   - function
  *
  * @proprietary Core implementation omitted from public repository.
+ * @see README.md for architecture overview.
  */
 
-export async function runReportPhase(
-    deps: unknown,
-    dossier: unknown,
-    surfaces: unknown[],
-    results: unknown[]
-): Promise<void> {
-    // [PROPRIETARY] — SRS scoring, financial metrics calculation,
-    // report generation, and PDF export logic omitted.
-    throw new Error("Proprietary implementation");
-}
+// This file is a public template. Implementation is proprietary.
+// See the project README for architecture documentation.

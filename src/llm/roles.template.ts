@@ -1,17 +1,22 @@
 /**
- * Role-Model Routing Map
+ * roles.ts
+ * S.O.V.A Engine — TypeScript
  *
- * Maps each agent role to its optimal AI model.
- * Routing is based on empirical testing of model strengths:
- * - Claude excels at strategic reasoning and nuanced classification
- * - GPT-4o excels at creative payload mutation and code generation
- * - Smaller models handle routine tasks (exploration, recon) efficiently
+ * Module: src\llm\roles.ts
+ * Last synced: 2026-06-09
  *
- * 6 roles · 3+ model families · Empirically optimized routing
+ * Complexity: 18 lines · 2 functions
  *
- * @proprietary Model assignments and fallback chains omitted.
+ * Functions:
+ *   - planning()
+ *   - execution()
+ *
+ * Exports:
+ *   - ROLE_MODEL_MAP
+ *
+ * @proprietary Core implementation omitted from public repository.
+ * @see README.md for architecture overview.
  */
 
-export const ROLE_MODEL_MAP: Record<string, string> = {
-    // [PROPRIETARY] — Specific model assignments omitted.
-};
+// This file is a public template. Implementation is proprietary.
+// See the project README for architecture documentation.

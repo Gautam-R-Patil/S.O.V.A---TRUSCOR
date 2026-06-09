@@ -1,11 +1,34 @@
 /**
- * SQLite Database — Session Persistence & Experience Memory
+ * db.ts
+ * S.O.V.A Engine — TypeScript
  *
- * Uses better-sqlite3 in WAL mode for concurrent read/write.
- * Schema: sessions, surfaces, attacks, results, experience_cases
+ * Module: src\memory\db.ts
+ * Last synced: 2026-06-09
  *
- * WAL mode enables safe reads during active attack sessions.
+ * Complexity: 87 lines · 11 functions · 1 classes
  *
- * @proprietary Schema and initialization logic omitted.
+ * Classes:
+ *   - TEXT
+ *
+ * Functions:
+ *   - sessions()
+ *   - surfaces()
+ *   - attacks()
+ *   - attack_results()
+ *   - snapshots()
+ *   - experience_logs()
+ *   - openDb()
+ *   - join()
+ *   - Database()
+ *   - pragma()
+ *   - exec()
+ *
+ * Exports:
+ *   - openDb
+ *
+ * @proprietary Core implementation omitted from public repository.
+ * @see README.md for architecture overview.
  */
-export function openDb(): unknown { throw new Error("Proprietary"); }
+
+// This file is a public template. Implementation is proprietary.
+// See the project README for architecture documentation.

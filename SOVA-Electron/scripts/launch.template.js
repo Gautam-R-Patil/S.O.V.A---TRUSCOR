@@ -1,25 +1,25 @@
 /**
- * payloads-scripted.js
+ * launch.js
  * S.O.V.A Engine — JavaScript
  *
- * Module: SOVA-Electron\engine\mvp\payloads-scripted.js
+ * Module: SOVA-Electron\scripts\launch.js
  * Last synced: 2026-06-09
  *
- * Complexity: 126 lines · 8 functions · 2 classes
- *
- * Classes:
- *   - signatures
- *   - confirmed
+ * Complexity: 62 lines · 12 functions
  *
  * Functions:
- *   - screen()
- *   - do()
- *   - deterministic()
- *   - analysis()
- *   - page()
- *   - info()
- *   - payload()
- *   - 850()
+ *   - env()
+ *   - loadEnvFile()
+ *   - readFileSync()
+ *   - trim()
+ *   - indexOf()
+ *   - slice()
+ *   - join()
+ *   - log()
+ *   - spawn()
+ *   - on()
+ *   - error()
+ *   - exit()
  *
  * @proprietary Core implementation omitted from public repository.
  * @see README.md for architecture overview.

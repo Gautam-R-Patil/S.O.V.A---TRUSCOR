@@ -1,30 +1,20 @@
 /**
- * library.ts
+ * retry.ts
  * S.O.V.A Engine — TypeScript
  *
- * Module: src\attacks\library.ts
+ * Module: src\util\retry.ts
  * Last synced: 2026-06-09
  *
- * Complexity: 53 lines · 11 functions · 1 classes
- *
- * Classes:
- *   - AttackLibrary
+ * Complexity: 23 lines · 4 functions
  *
  * Functions:
- *   - load()
- *   - join()
+ *   - fn()
+ *   - pow()
  *   - error()
- *   - readdirSync()
- *   - readFileSync()
- *   - trim()
- *   - push()
- *   - candidatesFor()
- *   - filter()
- *   - includes()
- *   - all()
+ *   - Promise()
  *
  * Exports:
- *   - AttackLibrary
+ *   - function
  *
  * @proprietary Core implementation omitted from public repository.
  * @see README.md for architecture overview.

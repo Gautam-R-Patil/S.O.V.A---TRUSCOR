@@ -1,34 +1,37 @@
 /**
- * Phase 1: External Reconnaissance
+ * phase1-recon.ts
+ * S.O.V.A Engine — TypeScript
  *
- * First phase of the S.O.V.A attack pipeline.
- * Gathers external intelligence on the target before any browser interaction.
+ * Module: src\phases\phase1-recon.ts
+ * Last synced: 2026-06-09
  *
- * Intelligence gathered:
- * - Technology stack identification (frameworks, CDNs, APIs)
- * - Public vulnerability disclosures related to the target
- * - Domain infrastructure analysis
- * - Social engineering surface assessment
- * - Historical security incident references
+ * Complexity: 110 lines · 17 functions
  *
- * Output: A structured "dossier" object consumed by all subsequent phases.
+ * Functions:
+ *   - runReconPhase()
+ *   - phase()
+ *   - ReconAgent()
+ *   - URL()
+ *   - now()
+ *   - info()
+ *   - encodeURIComponent()
+ *   - browserNavigate()
+ *   - sleep()
+ *   - browserExtractText()
+ *   - run()
+ *   - query()
+ *   - push()
+ *   - warn()
+ *   - map()
+ *   - fileWrite()
+ *   - stringify()
  *
- * Dependencies: ReconAgent (LLM-powered), external search APIs
- * Complexity: ~120 lines · Multi-source OSINT · Dossier synthesis
+ * Exports:
+ *   - function
  *
  * @proprietary Core implementation omitted from public repository.
+ * @see README.md for architecture overview.
  */
 
-export interface PhaseDeps {
-    atlas: unknown;    // AtlasClient — browser control
-    llm: unknown;      // LLMClient — AI model access
-    session: unknown;  // Session config
-    repos: unknown;    // Database repositories
-    log: unknown;      // Logger
-}
-
-export async function runReconPhase(deps: PhaseDeps): Promise<unknown> {
-    // [PROPRIETARY] — External reconnaissance, OSINT gathering,
-    // and dossier construction logic omitted.
-    throw new Error("Proprietary implementation");
-}
+// This file is a public template. Implementation is proprietary.
+// See the project README for architecture documentation.

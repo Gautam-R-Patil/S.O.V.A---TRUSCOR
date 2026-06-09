@@ -1,21 +1,28 @@
 /**
- * Atlas MCP Server Spawner
+ * spawn.ts
+ * S.O.V.A Engine — TypeScript
  *
- * Spawns the Atlas MCP server as a child process.
- * Atlas wraps Playwright-core to provide sandboxed browser automation
- * via the MCP (Model Context Protocol) standard.
+ * Module: src\mcp\spawn.ts
+ * Last synced: 2026-06-09
  *
- * Each session gets isolated: browser profile, HOME directory,
- * and Playwright context — enabling safe parallel execution.
+ * Complexity: 50 lines · 8 functions
+ *
+ * Functions:
+ *   - spawnAtlas()
+ *   - join()
+ *   - rm()
+ *   - cwd()
+ *   - spawn()
+ *   - on()
+ *   - debugging()
+ *   - toString()
+ *
+ * Exports:
+ *   - function
  *
  * @proprietary Core implementation omitted from public repository.
+ * @see README.md for architecture overview.
  */
 
-export async function spawnAtlas(opts: {
-    headless: boolean;
-    sessionId: string;
-}): Promise<unknown> {
-    // [PROPRIETARY] — Child process spawning, environment isolation,
-    // and MCP server initialization omitted.
-    throw new Error("Proprietary implementation");
-}
+// This file is a public template. Implementation is proprietary.
+// See the project README for architecture documentation.

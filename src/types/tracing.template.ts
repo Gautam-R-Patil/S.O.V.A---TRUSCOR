@@ -1,17 +1,11 @@
 /**
- * orchestrator.js
- * S.O.V.A Engine — JavaScript
+ * tracing.ts
+ * S.O.V.A Engine — TypeScript
  *
- * Module: SOVA-Electron\engine\orchestrator.js
+ * Module: src\types\tracing.ts
  * Last synced: 2026-06-09
  *
- * Complexity: 18 lines · 4 functions
- *
- * Functions:
- *   - MVP()
- *   - run()
- *   - runLive()
- *   - runMvpDemo()
+ * Complexity: 35 lines · 0 functions
  *
  * @proprietary Core implementation omitted from public repository.
  * @see README.md for architecture overview.

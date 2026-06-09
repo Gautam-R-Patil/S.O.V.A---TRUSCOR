@@ -1,13 +1,41 @@
 /**
- * γ Gamma Worker — Attack / Exploitation
- * Opens right-third Chromium popup, navigates to target, finds chat
- * input, delivers 3-turn jailbreak payload. Real DOM, real typing.
+ * worker-gamma.js
+ * S.O.V.A Engine — JavaScript
  *
- * 3-turn attack sequence:
- *   Turn 1: Priming — establishes context
- *   Turn 2: Confirmation — verifies persona loaded
- *   Turn 3: Trigger — fires exploitation payload
+ * Module: SOVA-Electron\engine\mvp\worker-gamma.js
+ * Last synced: 2026-06-09
  *
- * ~210 lines · 3-turn attack · Chat input detection · Fallback simulation
- * @proprietary Worker implementation omitted.
+ * Complexity: 207 lines · 24 functions
+ *
+ * Functions:
+ *   - resolveTarget()
+ *   - launchGamma()
+ *   - emit()
+ *   - launchPopup()
+ *   - attachBackgroundPromptDismisser()
+ *   - goto()
+ *   - sleep()
+ *   - ensureSignedIn()
+ *   - url()
+ *   - onSignInPage()
+ *   - tryGoogleSignIn()
+ *   - click()
+ *   - waitForLoadState()
+ *   - fill()
+ *   - press()
+ *   - runGammaAttack()
+ *   - runGammaSimulation()
+ *   - sendTurn()
+ *   - max()
+ *   - scrollIntoViewIfNeeded()
+ *   - type()
+ *   - truncate()
+ *   - String()
+ *   - slice()
+ *
+ * @proprietary Core implementation omitted from public repository.
+ * @see README.md for architecture overview.
  */
+
+// This file is a public template. Implementation is proprietary.
+// See the project README for architecture documentation.

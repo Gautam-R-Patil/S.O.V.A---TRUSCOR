@@ -1,33 +1,32 @@
 /**
- * ReconAgent — External Intelligence Gatherer
+ * recon.ts
+ * S.O.V.A Engine — TypeScript
  *
- * Performs OSINT (Open Source Intelligence) reconnaissance:
- * - DuckDuckGo searches for target domain intelligence
- * - Technology stack fingerprinting
- * - Public vulnerability disclosure scanning
- * - Social engineering vector identification
- * - Infrastructure and deployment pattern analysis
+ * Module: src\agents\recon.ts
+ * Last synced: 2026-06-09
  *
- * Produces a "dossier" consumed by Phase 2 (Mapping) and
- * Phase 3 (Planning) to inform attack strategy.
+ * Complexity: 85 lines · 9 functions · 1 classes
  *
- * Complexity: ~140 lines · Multi-source OSINT · Dossier synthesis
- * Technology fingerprinting · Structured intelligence output
+ * Classes:
+ *   - ReconAgent
+ *
+ * Functions:
+ *   - object()
+ *   - array()
+ *   - string()
+ *   - any()
+ *   - run()
+ *   - buildPrompt()
+ *   - complete()
+ *   - slice()
+ *   - stringify()
+ *
+ * Exports:
+ *   - ReconAgent
  *
  * @proprietary Core implementation omitted from public repository.
+ * @see README.md for architecture overview.
  */
 
-import { BaseAgent } from "./base.js";
-
-export class ReconAgent extends BaseAgent {
-    /** @proprietary Gathers external intelligence on the target. */
-    async run(input: { targetUrl: string }): Promise<{
-        technologies: string[];
-        findings: string[];
-        dossierSummary: string;
-    }> {
-        // [PROPRIETARY] — OSINT gathering, technology fingerprinting,
-        // and dossier synthesis logic omitted.
-        throw new Error("Proprietary implementation");
-    }
-}
+// This file is a public template. Implementation is proprietary.
+// See the project README for architecture documentation.

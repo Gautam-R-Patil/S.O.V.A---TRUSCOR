@@ -1,36 +1,42 @@
-#!/usr/bin/env node
 /**
- * S.O.V.A — Security & Offensive Vulnerability Adversary
- * CLI Entry Point · v2.0
+ * index.ts
+ * S.O.V.A Engine — TypeScript
  *
- * Boots the full autonomous attack pipeline:
- * 1. Validates environment (OpenRouter API key, HuggingFace token)
- * 2. Spawns Atlas MCP server (Playwright-based browser control)
- * 3. Initializes multi-model LLM client with role-based routing
- * 4. Opens SQLite database for session persistence & experience memory
- * 5. Constructs session config and hands off to Controller
+ * Module: src\index.ts
+ * Last synced: 2026-06-09
  *
- * CLI Arguments:
- *   <url>              Target URL to test
- *   --email <email>    Login email (or TARGET_EMAIL env)
- *   --password <pass>  Login password (or TARGET_PASSWORD env)
- *   --budget-ms <ms>   Wall-clock budget (default: 1,800,000 = 30min)
- *   --max-attacks <n>  Maximum attack attempts (default: 50)
- *   --headless         Run browser in headless mode
+ * Complexity: 104 lines · 25 functions
  *
- * Complexity: ~100 lines · Session isolation via ULID · Graceful shutdown
+ * Functions:
+ *   - Command()
+ *   - name()
+ *   - description()
+ *   - version()
+ *   - argument()
+ *   - option()
+ *   - action()
+ *   - log()
+ *   - error()
+ *   - exit()
+ *   - ulid()
+ *   - join()
+ *   - mkdir()
+ *   - Logger()
+ *   - info()
+ *   - spawnAtlas()
+ *   - AtlasClient()
+ *   - connect()
+ *   - LLMClient()
+ *   - openDb()
+ *   - Date()
+ *   - Number()
+ *   - Controller()
+ *   - run()
+ *   - parse()
  *
  * @proprietary Core implementation omitted from public repository.
- * @see controller.template.ts for pipeline orchestration
+ * @see README.md for architecture overview.
  */
 
-import "dotenv/config";
-import { Command } from "commander";
-
-// [PROPRIETARY] — CLI setup, environment validation, Atlas MCP spawn,
-// LLM client initialization, SQLite connection, session construction,
-// and Controller.run() invocation are omitted.
-//
-// See ARCHITECTURE.md for full system design documentation.
-
-export {};
+// This file is a public template. Implementation is proprietary.
+// See the project README for architecture documentation.

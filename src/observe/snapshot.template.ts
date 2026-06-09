@@ -1,12 +1,29 @@
 /**
- * DOM Snapshot — Page State Capture
+ * snapshot.ts
+ * S.O.V.A Engine — TypeScript
  *
- * Captures structured representation of current page state
- * for ExplorerAgent analysis. Includes visible elements,
- * interactive controls, text content, and navigation state.
+ * Module: src\observe\snapshot.ts
+ * Last synced: 2026-06-09
  *
- * @proprietary Snapshot logic omitted.
+ * Complexity: 61 lines · 9 functions
+ *
+ * Functions:
+ *   - captureSnapshot()
+ *   - newId()
+ *   - join()
+ *   - mkdirSync()
+ *   - browserScreenshot()
+ *   - writeFileSync()
+ *   - browserExtractHtml()
+ *   - browserEvaluateJs()
+ *   - Date()
+ *
+ * Exports:
+ *   - function
+ *
+ * @proprietary Core implementation omitted from public repository.
+ * @see README.md for architecture overview.
  */
-export function captureSnapshot(page: unknown): Promise<unknown> {
-    throw new Error("Proprietary implementation");
-}
+
+// This file is a public template. Implementation is proprietary.
+// See the project README for architecture documentation.

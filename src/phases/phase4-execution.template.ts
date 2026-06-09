@@ -1,45 +1,53 @@
 /**
- * Phase 4: Attack Execution Engine
+ * phase4-execution.ts
+ * S.O.V.A Engine — TypeScript
  *
- * The largest and most complex phase (~480 lines).
- * Executes the ordered attack plan against the target in real-time.
+ * Module: src\phases\phase4-execution.ts
+ * Last synced: 2026-06-09
  *
- * Core execution loop:
- * ┌─────────────────────────────────────────────────────────────┐
- * │  for each attack in queue:                                  │
- * │    1. Navigate to target surface                            │
- * │    2. Deliver payload via visual-deliver engine              │
- * │    3. Wait for AI response (active settling, not sleep())    │
- * │    4. Capture response text                                  │
- * │    5. Judge verdict via JudgeAgent                           │
- * │    6. If failure → Mutator evolves payload → back to queue   │
- * │    7. Record result to JSONL trace + SQLite                  │
- * │    8. Check stop policy (budget, max attacks)                │
- * └─────────────────────────────────────────────────────────────┘
+ * Complexity: 522 lines · 54 functions
  *
- * Key engineering innovations:
- * - Active Response Settling: Polls character-length stability instead
- *   of static sleep() — settles the moment AI stops generating
- * - Mutation Queue Safeguards: Tracks mutation descendants per root
- *   parent, caps at 5, appends variants to back of queue
- * - Dynamic Auth Checking: Hostname-based redirect detection catches
- *   session expiry mid-attack
- * - Visual Delivery: Types payloads character-by-character into real
- *   DOM elements, simulating human interaction
+ * Functions:
+ *   - runExecutionPhase()
+ *   - phase()
+ *   - AttackerAgent()
+ *   - JudgeAgent()
+ *   - MutatorAgent()
+ *   - now()
+ *   - info()
+ *   - text()
+ *   - browserNavigate()
+ *   - sleep()
+ *   - checkAuthStatus()
+ *   - warn()
+ *   - shift()
+ *   - get()
+ *   - updateStatus()
+ *   - browserEvaluateJs()
+ *   - String()
+ *   - import()
+ *   - doVisualLogin()
+ *   - captureSnapshot()
+ *   - insert()
+ *   - deliverAttack()
+ *   - deliverPayloadVisually()
+ *   - buildErrorResult()
+ *   - push()
+ *   - waitForResponseToSettle()
+ *   - extractResponse()
+ *   - run()
+ *   - Date()
+ *   - slice()
+ *   ... and 24 more
  *
- * Dependencies: AtlasClient, MutatorAgent, JudgeAgent, AttackLibrary
- * Complexity: ~480 lines · 14 internal functions · 3 agent coordination
- * Active settling · Mutation queue · Auth recovery · JSONL tracing
+ * Exports:
+ *   - function
+ *   - function
+ *   - function
  *
  * @proprietary Core implementation omitted from public repository.
+ * @see README.md for architecture overview.
  */
 
-export async function runExecutionPhase(
-    deps: unknown,
-    attacks: unknown[],
-    surfaceMap: Map<string, unknown>
-): Promise<unknown[]> {
-    // [PROPRIETARY] — Full attack execution loop, active settling,
-    // mutation queue, auth recovery, and verdict classification omitted.
-    throw new Error("Proprietary implementation");
-}
+// This file is a public template. Implementation is proprietary.
+// See the project README for architecture documentation.

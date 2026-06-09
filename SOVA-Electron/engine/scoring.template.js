@@ -1,11 +1,27 @@
 /**
- * Scoring Engine — SRS (Sybil Resilience Score) Calculator
+ * scoring.js
+ * S.O.V.A Engine — JavaScript
  *
- * Deterministic FICO-style scoring:
- *   Base: 850 points
- *   Penalty categories: AUTH, DB, PII, LOGIC, RCE, DOS
- *   Industry multiplier: Finance/Healthcare = 1.2×
- *   Final grade: 0-850 mapped to A/B/C/D/F
+ * Module: SOVA-Electron\engine\scoring.js
+ * Last synced: 2026-06-09
  *
- * @proprietary Scoring weights and calculation logic omitted.
+ * Complexity: 63 lines · 7 functions · 1 classes
+ *
+ * Classes:
+ *   - ScoringEngine
+ *
+ * Functions:
+ *   - constructor()
+ *   - applyPenalty()
+ *   - round()
+ *   - max()
+ *   - send()
+ *   - getFinalScore()
+ *   - getDistribution()
+ *
+ * @proprietary Core implementation omitted from public repository.
+ * @see README.md for architecture overview.
  */
+
+// This file is a public template. Implementation is proprietary.
+// See the project README for architecture documentation.

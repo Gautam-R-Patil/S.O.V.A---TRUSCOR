@@ -1,18 +1,48 @@
 /**
- * SOVA Bridge — Live Mode CLI-to-Electron Connector
+ * sova-bridge.js
+ * S.O.V.A Engine — JavaScript
  *
- * Spawns the full S.O.V.A CLI engine as a child process and bridges
- * its output to the Electron War Room UI.
+ * Module: SOVA-Electron\engine\live\sova-bridge.js
+ * Last synced: 2026-06-09
  *
- * Bridge architecture:
- * - Spawns `node dist/index.js <target>` with isolated env
- * - Parses stderr lines → routes to α/β/γ terminal panes
- * - Tails JSONL trace files (LLM traces, Atlas traces)
- * - Maps real attack results to financial penalties
- * - 6-minute hard kill budget for safety
+ * Complexity: 179 lines · 31 functions
  *
- * ~260 lines · Child process management · Stderr parsing
- * JSONL tailing · Real-time event routing · Safety budget
+ * Functions:
+ *   - UI()
+ *   - emitFactory()
+ *   - emit()
+ *   - send()
+ *   - runLive()
+ *   - ScoringEngine()
+ *   - join()
+ *   - existsSync()
+ *   - String()
+ *   - spawn()
+ *   - on()
+ *   - setTimeout()
+ *   - resetHang()
+ *   - toString()
+ *   - split()
+ *   - pop()
+ *   - parseStderrLine()
+ *   - match()
+ *   - startTails()
+ *   - kill()
+ *   - Promise()
+ *   - clearTimeout()
+ *   - readFileSync()
+ *   - parse()
+ *   - mapVerdict()
+ *   - applyPenalty()
+ *   - getFinalScore()
+ *   - getDistribution()
+ *   - push()
+ *   - truncate()
+ *   ... and 1 more
  *
- * @proprietary Bridge implementation omitted.
+ * @proprietary Core implementation omitted from public repository.
+ * @see README.md for architecture overview.
  */
+
+// This file is a public template. Implementation is proprietary.
+// See the project README for architecture documentation.

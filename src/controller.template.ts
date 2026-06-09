@@ -1,62 +1,49 @@
 /**
- * Controller — The Brain's Orchestrator
- * S.O.V.A Engine v2.0
+ * controller.ts
+ * S.O.V.A Engine — TypeScript
  *
- * The ONLY module that owns both AtlasClient (browser) and LLMClient (AI).
- * Agents receive only `llm`; phases receive `PhaseDeps` (both).
+ * Module: src\controller.ts
+ * Last synced: 2026-06-09
  *
- * Lifecycle: RECON → MAPPING → PLANNING → EXECUTION → REPORT
+ * Complexity: 146 lines · 26 functions · 1 classes
  *
- * Architecture:
- * ┌─────────────────────────────────────────────────────┐
- * │                   Controller.run()                   │
- * ├──────────┬──────────┬──────────┬──────────┬─────────┤
- * │ Phase 1  │ Phase 2  │ Phase 3  │ Phase 4  │ Phase 5 │
- * │  RECON   │ MAPPING  │ PLANNING │EXECUTION │ REPORT  │
- * │  (OSINT) │ (Browse) │ (Claude) │ (Attack) │ (Score) │
- * └──────────┴──────────┴──────────┴──────────┴─────────┘
- *         ↕               ↕            ↕
- *    ReconAgent      ExplorerAgent  Mutator+Judge
- *                    StrategyAgent  RefinerAgent
+ * Classes:
+ *   - Controller
  *
- * Post-pipeline:
- * - LogRefinerAgent distills session into structured Experience Case
- * - Experience Cases persist in SQLite for cross-session learning
- * - Session status updated to "completed" or "failed"
+ * Functions:
+ *   - constructor()
+ *   - run()
+ *   - makeRepos()
+ *   - insert()
+ *   - info()
+ *   - runReconPhase()
+ *   - Mapping()
+ *   - runMappingPhase()
+ *   - Planning()
+ *   - runPlanningPhase()
+ *   - Map()
+ *   - runExecutionPhase()
+ *   - runReportPhase()
+ *   - Refinement()
+ *   - map()
+ *   - find()
+ *   - LogRefinerAgent()
+ *   - URL()
+ *   - filter()
+ *   - newId()
+ *   - stringify()
+ *   - Date()
+ *   - warn()
+ *   - updateStatus()
+ *   - error()
+ *   - close()
  *
- * Complexity: ~150 lines · 5 sequential phases · 6 agent coordination
- * Memory refinement · Session persistence · Graceful error handling
+ * Exports:
+ *   - Controller
  *
  * @proprietary Core implementation omitted from public repository.
+ * @see README.md for architecture overview.
  */
 
-import type Database from "better-sqlite3";
-import type { AtlasClient } from "./mcp/client.js";
-import type { LLMClient } from "./llm/client.js";
-import type { Session } from "./types/session.js";
-import type { Logger } from "./util/log.js";
-
-export class Controller {
-    constructor(
-        private atlas: AtlasClient,
-        private llm: LLMClient,
-        private db: Database.Database,
-        private session: Session,
-        private log: Logger,
-    ) {}
-
-    /**
-     * Executes the full 5-phase autonomous attack pipeline.
-     * Each phase feeds results to the next:
-     *   dossier → surfaces → attacks → results → report
-     *
-     * After pipeline completion, the LogRefinerAgent autonomously
-     * distills the session into a structured Experience Case for
-     * cross-session learning.
-     *
-     * @proprietary Implementation omitted.
-     */
-    async run(): Promise<void> {
-        // [PROPRIETARY] — Full pipeline orchestration omitted.
-    }
-}
+// This file is a public template. Implementation is proprietary.
+// See the project README for architecture documentation.
